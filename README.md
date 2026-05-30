@@ -100,18 +100,26 @@
 
 ```
 bicycle sharing pj/
-├── 📂 data/                           # 数据文件（gitignore 排除）
-│   ├── 上海共享单车数据.csv             # 原始骑行数据
-│   ├── 上海天气.xlsx                   # 原始天气数据
-│   ├── 共享单车_清洗后.csv              # 清洗后的骑行数据（运行后生成）
-│   ├── 共享单车_用户特征.csv            # 用户级别聚合特征（运行后生成）
-│   ├── 共享单车_单车特征.csv            # 单车级别聚合特征（运行后生成）
-│   └── 共享单车_天气清洗后.csv          # 清洗后的天气数据（运行后生成）
+├── 📂 data/                                # 数据文件
+│   ├── 上海共享单车数据.csv                  # 原始骑行订单数据（102,361 条）
+│   ├── 上海天气.xlsx                        # 原始天气数据（31 天）
+│   ├── 共享单车_清洗后.csv                   # Notebook A 输出：清洗后骑行明细
+│   ├── 共享单车_天气清洗后.csv               # Notebook A 输出：清洗后天气表
+│   ├── 共享单车_用户特征.csv                 # Notebook A 输出：用户级聚合特征
+│   ├── 共享单车_单车特征.csv                 # Notebook A 输出：单车级聚合特征
+│   ├── rfm_standardized.csv                 # Notebook C1-C3 输出：标准化 RFM 数据
+│   ├── rfm_clustered.csv                    # Notebook C4-C5 输出：K-Means 聚类结果
+│   └── 共享单车_RFM分层.csv                  # Notebook C6-C10 输出：用户价值分层结果
 │
-├── 📂 code/                           # 分析 Notebook（按业务拆分）
-│   ├── 共享单车数据处理与特征工程.ipynb   #  数据清洗 + 特征工程
-│   ├── 共享单车EDA与可视化.ipynb        #  EDA探索性分析（待认领）
-│   └── 共享单车用户价值RFM分层.ipynb    #  用户价值分层（待认领）
+├── 📂 code/                                # 分析 Notebook（按任务拆分）
+│   ├── 共享单车数据观察.ipynb                # 数据预览与字段检查
+│   ├── 共享单车数据处理与特征工程_zfh.ipynb   # A：数据清洗、异常处理、特征工程
+│   ├── 共享单车EDA_B1_hls.ipynb              # B1：时间维度分析
+│   ├── 共享单车EDA_B2_hls.ipynb              # B2：用户行为分析
+│   ├── 共享单车EDA_B3-B4_ljh.ipynb           # B3-B4：天气影响与空间分布分析
+│   ├── 共享单车RFM_C1-C3_hls.ipynb           # C1-C3：RFM 定义与标准化
+│   ├── 共享单车RFM_C4-C5_ljh.ipynb           # C4-C5：K 值选择与 K-Means 聚类
+│   └── 共享单车RFM_C6-C10_wl.ipynb           # C6-C10：分层画像、运营建议与结果保存
 │
 ├── .gitignore
 └── README.md
